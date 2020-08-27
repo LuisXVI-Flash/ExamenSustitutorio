@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
-from miapp.models import Libro, Autor
+from miapp.models import Libro, Autor, Editoriales
 
 # Create your views here.
 
@@ -33,9 +33,16 @@ def eliminar_autores(request, id):
     return redirect("autores")
 
 def editoriales(request):
+    editoriales = Editoriales.objects.all()
     return render(request, 'editorial.html',{
         'titulo':'Editoriales',
+        'editoriales':editoriales
     })
+
+def eliminar_editoriales(request, id):
+    editoriales = Editoriales.objects.get(pk=id)
+    editoriales.delete()
+    return redirect("editoriales")
 
 def paises(request):
     return render(request, 'pais.html',{

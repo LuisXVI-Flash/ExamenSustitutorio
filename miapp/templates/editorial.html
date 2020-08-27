@@ -6,5 +6,19 @@
 {% block content %}
     
     <h1 class="title">Listado de Editoriales</h1>
+    <ul>
+        {%for editorial in editoriales %}
+            <li>
+                <h4>
+                    {{editorial.ideditorial}} - {{editorial.nombre}} 
+                </h4>
+            <span>estado: {{autor.estado}}</span><br>
+                
+            <a href="{% url 'eliminar_editoriales' id=editorial.ideditorial %}">Eliminar Editorial</a>
+            </p>
+            </li><br>
+        {% endfor %}
+
+    </ul>
 
 {% endblock %}

@@ -25,6 +25,7 @@ urlpatterns = [
     path('autores/',views.autores, name="autores"),
     path('eliminar_autores/<int:id>', views.eliminar_autores, name="eliminar_autores"),
     path('editoriales/',views.editoriales,name="editoriales"),
+    path('eliminar_editoriales/<int:id>', views.eliminar_editoriales, name="eliminar_editoriales"),
     path('paises/',views.paises, name="paises"),
     path('consultas/',views.consultas,name="consultas"),
 
