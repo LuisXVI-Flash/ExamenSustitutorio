@@ -6,19 +6,22 @@
 {% block content %}
     
     <h1 class="title">Listado de Editoriales</h1>
-    <ul>
-        {%for editorial in editoriales %}
-            <li>
-                <h4>
-                    {{editorial.ideditorial}} - {{editorial.nombre}} 
-                </h4>
-            <span>estado: {{autor.estado}}</span><br>
-                
-            <a href="{% url 'eliminar_editoriales' id=editorial.ideditorial %}">Eliminar Editorial</a>
-            </p>
-            </li><br>
-        {% endfor %}
 
-    </ul>
+<table>
+  <tr>
+    <th>ID EDITORIAL</th>
+    <th>NOMBRE</th>
+    <th>ESTADO</th>
+    <th>Eliminar</th>
+  </tr>
+{%for editorial in editoriales %}
+  <tr>
+    <td>{{editorial.ideditorial}}</td>
+    <td>{{editorial.nombre}}</td>
+    <td>{{editorial.estado}}</td>
+    <td><a href="{% url 'eliminar_editoriales' id=editorial.ideditorial %}">Eliminar Editorial</a></td>
+  </tr>
+{% endfor %}
+</table>
 
 {% endblock %}
