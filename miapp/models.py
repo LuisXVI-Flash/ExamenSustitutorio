@@ -23,4 +23,9 @@ class Editoriales(models.Model):
     nombre = models.CharField(max_length=40)
     estado = models.CharField(max_length=1)
 
+class Pais(models.Model):
+    idpais = models.IntegerField()
+    nombre = models.CharField(max_length=20)
+    estado = models.CharField(max_length=1)
+
 

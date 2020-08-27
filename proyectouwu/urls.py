@@ -27,6 +27,7 @@ urlpatterns = [
     path('editoriales/',views.editoriales,name="editoriales"),
     path('eliminar_editoriales/<int:id>', views.eliminar_editoriales, name="eliminar_editoriales"),
     path('paises/',views.paises, name="paises"),
+    path('eliminar_paises/<int:id>', views.eliminar_paises, name="eliminar_paises"),
     path('consultas/',views.consultas,name="consultas"),
 
 ]

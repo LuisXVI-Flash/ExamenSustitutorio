@@ -6,5 +6,19 @@
 {% block content %}
     
     <h1 class="title">Listado de Paises</h1>
+    <ul>
+        {%for pais in paises %}
+            <li>
+                <h4>
+                    {{pais.idpais}} - {{pais.nombre}} 
+                </h4>
+            <span>estado: {{pais.estado}}</span><br>
+                
+            <a href="{% url 'eliminar_paises' id=pais.idpais %}">Eliminar Pais</a>
+            </p>
+            </li><br>
+        {% endfor %}
+
+    </ul>
 
 {% endblock %}
