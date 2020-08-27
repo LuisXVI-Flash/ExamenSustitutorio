@@ -6,5 +6,26 @@
 {% block content %}
     
     <h1 class="title">Listado de Libros</h1>
+    <ul>
+        
+            {%for libro in libros %}
+                <li>
+                    <h4>
+                        {{libro.idlibro}} - {{libro.nombre}}
+                    </h4>
+                <span>Codigo: {{libro.codigo}}</span><br>
+                <span>Fecha: {{libro.fecha}}</span><br>
+                <span>Stock: {{libro.stock}}</span><br>
+                <span>Id Autor: {{libro.idautor}}</span><br>
+                <span>Id Editorial: {{libro.ideditorial}}</span><br>
+                <span>Id Pais: {{libro.idpais}}</span><br>
+                
+                
+                <a href="{% url 'eliminar_libros' id=libro.idlibro %}">Eliminar Libro</a>
+                </p>
+                </li><br>
+            {% endfor %}
+
+    </ul>
 
 {% endblock %}

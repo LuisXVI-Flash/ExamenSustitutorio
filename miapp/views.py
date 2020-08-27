@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from miapp.models import Libro
 
 # Create your views here.
 
@@ -8,9 +9,16 @@ def index(request):
     })
 
 def libros(request):
+    libros = Libro.objects.all()
     return render(request, 'libros.html',{
         'titulo':'Libros',
+        'libros': libros,
     })
+
+def eliminar_libros(request,id):
+    libros = Libro.objects.get(pk=id)
+    libros.delete()
+    return redirect("libros")
 
 def autores(request):
     return render(request, 'autor.html',{
