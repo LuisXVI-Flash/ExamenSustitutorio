@@ -11,3 +11,10 @@ class Libro(models.Model):
     ideditorial = models.IntegerField()
     idpais = models.IntegerField()
 
+class Autor(models.Model):
+    idautor = models.IntegerField()
+    nombre = models.CharField(max_length=40)
+    apellidos = models.CharField(max_length=40)
+    dni = models.IntegerField()
+    estado = models.CharField(max_length=1)
+

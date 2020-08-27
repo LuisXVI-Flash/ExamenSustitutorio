@@ -6,5 +6,21 @@
 {% block content %}
     
     <h1 class="title">Listado de autores</h1>
+    <ul>
+        
+            {%for autor in autores %}
+                <li>
+                    <h4>
+                        {{autor.idautor}} - {{autor.nombre}} {{autor.apellidos}}
+                    </h4>
+                <span>DNI: {{autor.dni}}</span><br>
+                <span>estado: {{autor.estado}}</span><br>
+                
+                <a href="{% url 'eliminar_autores' id=autor.idautor %}">Eliminar Autor</a>
+                </p>
+                </li><br>
+            {% endfor %}
+
+    </ul>
 
 {% endblock %}
